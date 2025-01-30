@@ -11,11 +11,21 @@ body {
     padding: 20px;
     background: darkgreen;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
     color: #fff;
+}
+.header .logo {
+    position: absolute;
+    left: 20px;
+}
+.header .logo img {
+    height: 40px;
 }
 .header h1 {
     margin: 0;
     font-size: 24px;
+    flex: 1;
+    text-align: center;
 }
 .header .controls {
     display: flex;
