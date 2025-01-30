@@ -25,95 +25,128 @@
             <h2>Filters</h2>
             <div class="filter-group">
                 <label for="category">Category</label>
-                <select id="category">
-                    <option value="electronics">Electronics</option>
-                    <option value="home-appliances">Home Appliances</option>
-                    <option value="clothing">Clothing</option>
-                    <option value="sports">Sports</option>
-                </select>
+                <button class="toggle-btn" onclick="toggleFilter('category-filter')">+</button>
+                <div id="category-filter" class="filter-content">
+                    <select id="category">
+                        <option value="electronics">Electronics</option>
+                        <option value="home-appliances">Home Appliances</option>
+                        <option value="clothing">Clothing</option>
+                        <option value="sports">Sports</option>
+                    </select>
+                </div>
             </div>
             <div class="filter-group">
                 <label for="price">Price</label>
-                <input type="range" id="price" min="399" max="25999">
-                <div>Min: $399, Max: $25999</div>
+                <button class="toggle-btn" onclick="toggleFilter('price-filter')">+</button>
+                <div id="price-filter" class="filter-content">
+                    <input type="range" id="price" min="399" max="25999">
+                    <div>Min: $399, Max: $25999</div>
+                </div>
             </div>
             <div class="filter-group">
                 <label for="product-type">Product Type</label>
-                <select id="product-type">
-                    <option value="gaming-laptop">Gaming Laptop</option>
-                    <option value="ultrabook">Ultrabook</option>
-                    <option value="convertible">Convertible</option>
-                </select>
+                <button class="toggle-btn" onclick="toggleFilter('product-type-filter')">+</button>
+                <div id="product-type-filter" class="filter-content">
+                    <select id="product-type">
+                        <option value="gaming-laptop">Gaming Laptop</option>
+                        <option value="ultrabook">Ultrabook</option>
+                        <option value="convertible">Convertible</option>
+                    </select>
+                </div>
             </div>
             <div class="filter-group">
                 <label for="brand">Brand</label>
-                <input type="text" id="brand" placeholder="Search brands">
-                <div class="checkbox-list">
-                    <label><input type="checkbox" value="apple"> Apple</label>
-                    <label><input type="checkbox" value="samsung"> Samsung</label>
-                    <label><input type="checkbox" value="msi"> MSI</label>
-                    <label><input type="checkbox" value="dell"> Dell</label>
+                <button class="toggle-btn" onclick="toggleFilter('brand-filter')">+</button>
+                <div id="brand-filter" class="filter-content">
+                    <input type="text" id="brand" placeholder="Search brands">
+                    <div class="checkbox-list">
+                        <label><input type="checkbox" value="apple"> Apple</label>
+                        <label><input type="checkbox" value="samsung"> Samsung</label>
+                        <label><input type="checkbox" value="msi"> MSI</label>
+                        <label><input type="checkbox" value="dell"> Dell</label>
+                    </div>
                 </div>
             </div>
             <div class="filter-group">
                 <label for="color">Color</label>
-                <div class="color-swatch">
-                    <div style="background: red;"></div>
-                    <div style="background: blue;"></div>
-                    <div style="background: green;"></div>
-                    <div style="background: black;"></div>
+                <button class="toggle-btn" onclick="toggleFilter('color-filter')">+</button>
+                <div id="color-filter" class="filter-content">
+                    <div class="color-swatch">
+                        <div style="background: red;"></div>
+                        <div style="background: blue;"></div>
+                        <div style="background: green;"></div>
+                        <div style="background: black;"></div>
+                    </div>
                 </div>
             </div>
             <div class="filter-group">
                 <label for="status">Product Status</label>
-                <div class="checkbox-list">
-                    <label><input type="checkbox" value="new"> New</label>
-                    <label><input type="checkbox" value="refurbished"> Refurbished</label>
-                    <label><input type="checkbox" value="open-box"> Open Box</label>
-                    <label><input type="checkbox" value="pre-owned"> Pre-owned</label>
+                <button class="toggle-btn" onclick="toggleFilter('status-filter')">+</button>
+                <div id="status-filter" class="filter-content">
+                    <div class="checkbox-list">
+                        <label><input type="checkbox" value="new"> New</label>
+                        <label><input type="checkbox" value="refurbished"> Refurbished</label>
+                        <label><input type="checkbox" value="open-box"> Open Box</label>
+                        <label><input type="checkbox" value="pre-owned"> Pre-owned</label>
+                    </div>
                 </div>
             </div>
             <div class="filter-group">
                 <label for="model-series">Model Series</label>
-                <select id="model-series">
-                    <option value="macbook-pro">MacBook Pro</option>
-                    <option value="dell-xps">Dell XPS</option>
-                    <option value="hp-spectre">HP Spectre</option>
-                </select>
+                <button class="toggle-btn" onclick="toggleFilter('model-series-filter')">+</button>
+                <div id="model-series-filter" class="filter-content">
+                    <select id="model-series">
+                        <option value="macbook-pro">MacBook Pro</option>
+                        <option value="dell-xps">Dell XPS</option>
+                        <option value="hp-spectre">HP Spectre</option>
+                    </select>
+                </div>
             </div>
             <div class="filter-group">
                 <label for="specifications">Specifications</label>
-                <select id="specifications">
-                    <option value="11th-gen">11th Gen</option>
-                    <option value="12th-gen">12th Gen</option>
-                    <option value="intel-core-i7">Intel Core i7</option>
-                    <option value="amd-ryzen-5">AMD Ryzen 5</option>
-                    <option value="8gb-ram">8GB RAM</option>
-                    <option value="16gb-ram">16GB RAM</option>
-                    <option value="256gb-ssd">256GB SSD</option>
-                    <option value="1tb-hdd">1TB HDD</option>
-                </select>
+                <button class="toggle-btn" onclick="toggleFilter('specifications-filter')">+</button>
+                <div id="specifications-filter" class="filter-content">
+                    <select id="specifications">
+                        <option value="11th-gen">11th Gen</option>
+                        <option value="12th-gen">12th Gen</option>
+                        <option value="intel-core-i7">Intel Core i7</option>
+                        <option value="amd-ryzen-5">AMD Ryzen 5</option>
+                        <option value="8gb-ram">8GB RAM</option>
+                        <option value="16gb-ram">16GB RAM</option>
+                        <option value="256gb-ssd">256GB SSD</option>
+                        <option value="1tb-hdd">1TB HDD</option>
+                    </select>
+                </div>
             </div>
             <div class="filter-group">
                 <label for="rating">Customer Rating</label>
-                <select id="rating">
-                    <option value="4-stars">4+ stars</option>
-                </select>
+                <button class="toggle-btn" onclick="toggleFilter('rating-filter')">+</button>
+                <div id="rating-filter" class="filter-content">
+                    <select id="rating">
+                        <option value="4-stars">4+ stars</option>
+                    </select>
+                </div>
             </div>
             <div class="filter-group">
                 <label for="discounts">Discounts</label>
-                <div class="checkbox-list">
-                    <label><input type="checkbox" value="10%"> 10%</label>
-                    <label><input type="checkbox" value="20%"> 20%</label>
-                    <label><input type="checkbox" value="bank-offers"> Bank Offers</label>
+                <button class="toggle-btn" onclick="toggleFilter('discounts-filter')">+</button>
+                <div id="discounts-filter" class="filter-content">
+                    <div class="checkbox-list">
+                        <label><input type="checkbox" value="10%"> 10%</label>
+                        <label><input type="checkbox" value="20%"> 20%</label>
+                        <label><input type="checkbox" value="bank-offers"> Bank Offers</label>
+                    </div>
                 </div>
             </div>
             <div class="filter-group">
                 <label for="additional-filters">Additional Filters</label>
-                <div class="checkbox-list">
-                    <label><input type="checkbox" value="eco-friendly"> Eco-Friendly</label>
-                    <label><input type="checkbox" value="bestseller"> Bestseller</label>
-                    <label><input type="checkbox" value="limited-stock"> Limited Stock</label>
+                <button class="toggle-btn" onclick="toggleFilter('additional-filters-filter')">+</button>
+                <div id="additional-filters-filter" class="filter-content">
+                    <div class="checkbox-list">
+                        <label><input type="checkbox" value="eco-friendly"> Eco-Friendly</label>
+                        <label><input type="checkbox" value="bestseller"> Bestseller</label>
+                        <label><input type="checkbox" value="limited-stock"> Limited Stock</label>
+                    </div>
                 </div>
             </div>
         </div>
@@ -301,5 +334,15 @@
             </div>
         </div>
     </div>
+    <script>
+        function toggleFilter(id) {
+            var element = document.getElementById(id);
+            if (element.style.display === "none" || element.style.display === "") {
+                element.style.display = "block";
+            } else {
+                element.style.display = "none";
+            }
+        }
+    </script>
 </body>
 </html>

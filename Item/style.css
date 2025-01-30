@@ -9,8 +9,9 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    background: #fff;
+    background: darkgreen;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    color: #fff;
 }
 .header h1 {
     margin: 0;
@@ -46,6 +47,7 @@ body {
 }
 .sidebar .filter-group {
     margin-bottom: 20px;
+    position: relative;
 }
 .sidebar .filter-group label {
     display: block;
@@ -75,6 +77,19 @@ body {
     border-radius: 50%;
     margin-right: 5px;
     cursor: pointer;
+}
+.sidebar .filter-group .toggle-btn {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+}
+.sidebar .filter-content {
+    display: none;
+    margin-top: 10px;
 }
 .products {
     flex: 1;
