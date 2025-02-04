@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Groceries</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="header">
+        <a href="../Homepage/index.html" class="logo">
+            <img src="./images/logo1.png" alt="Logo">
+        </a>
+        <h1>Groceries</h1>
+        <div class="controls">
+            <select>
+                <option value="price-asc">Price: Low to High</option>
+                <option value="price-desc">Price: High to Low</option>
+            </select>
+            <button>Toggle View</button>
+        </div>
+    </div>
+    <div class="container">
+        <div class="sidebar">
+            <h2>Filters</h2>
+            <div class="filter-group">
+                <label for="price">Price</label>
+                <button class="toggle-btn" onclick="toggleFilter('price-filter')">+</button>
+                <div id="price-filter" class="filter-content">
+                    <input type="range" id="price" min="1" max="100">
+                    <div>Min: $1, Max: $100</div>
+                </div>
+            </div>
+            <div class="filter-group">
+                <label for="product-type">Product Type</label>
+                <button class="toggle-btn" onclick="toggleFilter('product-type-filter')">+</button>
+                <div id="product-type-filter" class="filter-content">
+                    <select id="product-type">
+                        <option value="vegetables">Vegetables</option>
+                        <option value="fruits">Fruits</option>
+                    </select>
+                </div>
+            </div>
+            <div class="filter-group">
+                <label for="brand">Brand</label>
+                <button class="toggle-btn" onclick="toggleFilter('brand-filter')">+</button>
+                <div id="brand-filter" class="filter-content">
+                    <input type="text" id="brand" placeholder="Search brands">
+                    <div class="checkbox-list">
+                        <label><input type="checkbox" value="organic"> Organic</label>
+                        <label><input type="checkbox" value="local"> Local</label>
+                    </div>
+                </div>
+            </div>
+            <div class="filter-group">
+                <label for="color">Color</label>
+                <button class="toggle-btn" onclick="toggleFilter('color-filter')">+</button>
+                <div id="color-filter" class="filter-content">
+                    <div class="color-swatch">
+                        <div style="background: red;"></div>
+                        <div style="background: green;"></div>
+                        <div style="background: yellow;"></div>
+                        <div style="background: orange;"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="filter-group">
+                <label for="status">Product Status</label>
+                <button class="toggle-btn" onclick="toggleFilter('status-filter')">+</button>
+                <div id="status-filter" class="filter-content">
+                    <div class="checkbox-list">
+                        <label><input type="checkbox" value="fresh"> Fresh</label>
+                        <label><input type="checkbox" value="frozen"> Frozen</label>
+                    </div>
+                </div>
+            </div>
+            <div class="filter-group">
+                <label for="discounts">Discounts</label>
+                <button class="toggle-btn" onclick="toggleFilter('discounts-filter')">+</button>
+                <div id="discounts-filter" class="filter-content">
+                    <div class="checkbox-list">
+                        <label><input type="checkbox" value="10%"> 10%</label>
+                        <label><input type="checkbox" value="20%"> 20%</label>
+                        <label><input type="checkbox" value="bank-offers"> Bank Offers</label>
+                    </div>
+                </div>
+            </div>
+            <div class="filter-group">
+                <label for="additional-filters">Additional Filters</label>
+                <button class="toggle-btn" onclick="toggleFilter('additional-filters-filter')">+</button>
+                <div id="additional-filters-filter" class="filter-content">
+                    <div class="checkbox-list">
+                        <label><input type="checkbox" value="eco-friendly"> Eco-Friendly</label>
+                        <label><input type="checkbox" value="bestseller"> Bestseller</label>
+                        <label><input type="checkbox" value="limited-stock"> Limited Stock</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="products">
+            <div class="product-card">
+                <div class="badges">New Arrival</div>
+                <img src="./images/apple.jpg" alt="Apple">
+                <h3>Apple</h3>
+                <div class="specs">Type: Fruit, Weight: 1kg</div>
+                <div class="price">$3</div>
+                <div class="actions">
+                    <button>Add to Wishlist</button>
+                    <button>Add to Cart</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="badges">Featured</div>
+                <img src="./images/carrot.jpg" alt="Carrot">
+                <h3>Carrot</h3>
+                <div class="specs">Type: Vegetable, Weight: 1kg</div>
+                <div class="price">$2</div>
+                <div class="actions">
+                    <button>Add to Wishlist</button>
+                    <button>Add to Cart</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="badges">Bestseller</div>
+                <img src="./images/banana.jpg" alt="Banana">
+                <h3>Banana</h3>
+                <div class="specs">Type: Fruit, Weight: 1kg</div>
+                <div class="price">$1.5</div>
+                <div class="actions">
+                    <button>Add to Wishlist</button>
+                    <button>Add to Cart</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="badges">Limited Stock</div>
+                <img src="./images/broccoli.jpg" alt="Broccoli">
+                <h3>Broccoli</h3>
+                <div class="specs">Type: Vegetable, Weight: 1kg</div>
+                <div class="price">$4</div>
+                <div class="actions">
+                    <button>Add to Wishlist</button>
+                    <button>Add to Cart</button>
+                </div>
+            </div>
+            <!-- Add more product cards as needed -->
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
