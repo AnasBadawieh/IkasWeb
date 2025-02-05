@@ -158,3 +158,18 @@ footer h3, footer h5, footer p {
         align-items: center;
     }
 }
+
+.text-center {
+    text-align: center;
+    font-size: larger;
+    font-weight: bold;
+}
+
+.font-weight-bold {
+    font-weight: bold;
+    font-size: x-large;
+}
+
+.temp{
+    color: #009048;
+}
