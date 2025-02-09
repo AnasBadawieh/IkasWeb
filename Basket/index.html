@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Basket</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: url('./images/Prototype-ikas-login.jpg') no-repeat center center fixed;
+      background-size: cover;
+      font-family: Arial, sans-serif;
+    }
+    
+    .navbar {
+      background-color: #009048;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+    }
+    
+    .navbar a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .navbar img {
+      height: 40px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 20px auto;
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 20px;
+      border-radius: 4px;
+    }
+
+    .basket-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 0;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .basket-item img {
+      height: 60px;
+    }
+
+    .basket-summary {
+      text-align: right;
+      margin-top: 20px;
+    }
+
+    .checkout-button {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #28a745;
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <a href="../Homepage/index.html">
+      <img src="./images/logo1.png" alt="Logo">
+    </a>
+  </nav>
+
+  <div class="container">
+    <h1>Your Basket</h1>
+    <div class="basket-item">
+      <div>
+        <img src="./images/Airfryer.jpg" alt="Item 1">
+        <span>Item 1 Name</span>
+      </div>
+      <span>$10.00</span>
+    </div>
+    <div class="basket-item">
+      <div>
+        <img src="./images/Apples.jpg" alt="Item 2">
+        <span>Item 2 Name</span>
+      </div>
+      <span>$15.00</span>
+    </div>
+    <div class="basket-item">
+        <div>
+          <img src="./images/Bones.jpg" alt="Item 2">
+          <span>Item 2 Name</span>
+        </div>
+        <span>$15.00</span>
+      </div>
+    <div class="basket-summary">
+      <p>Total: $25.00</p>
+      <a href="checkout.html" class="checkout-button">Checkout</a>
+    </div>
+  </div>
+</body>
+</html>
