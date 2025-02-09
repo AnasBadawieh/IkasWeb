@@ -30,3 +30,24 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 });
+
+function showHelp() {
+    document.getElementById('helpModal').style.display = 'block';
+    document.getElementById('helpLink').classList.add('active');
+    document.body.style.overflow = 'hidden'; // Lock scroll
+}
+
+function closeHelp() {
+    document.getElementById('helpModal').style.display = 'none';
+    document.getElementById('helpLink').classList.remove('active');
+    document.body.style.overflow = 'auto'; // Unlock scroll
+}
+
+// Close the modal when clicking outside of it
+window.onclick = function(event) {
+    var modal = document.getElementById('helpModal');
+    if (event.target == modal) {
+        modal.style.display = 'none';
+        document.getElementById('helpLink').classList.remove('active');
+    }
+}
