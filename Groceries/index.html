@@ -1,150 +1,248 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Groceries</title>
+    <title>Market</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-</head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    </head>
 <body>
-    <div class="header">
-        <a href="../Homepage/index.html" class="logo">
-            <img src="./images/logo1.png" alt="Logo">
-        </a>
-        <h1>Groceries</h1>
-        <div class="controls">
-            <select>
-                <option value="price-asc">Price: Low to High</option>
-                <option value="price-desc">Price: High to Low</option>
-            </select>
-            <button>Toggle View</button>
-        </div>
-    </div>
-    <div class="container">
-        <div class="sidebar">
-            <h2>Filters</h2>
-            <div class="filter-group">
-                <label for="price">Price</label>
-                <button class="toggle-btn" onclick="toggleFilter('price-filter')">+</button>
-                <div id="price-filter" class="filter-content">
-                    <input type="range" id="price" min="1" max="100">
-                    <div>Min: $1, Max: $100</div>
-                </div>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #009048;">
+        <div class="container">
+            <a class="navbar-brand" href="../Homepage/index.html"><img src="./images/logo1.png" alt="Logo" class="img-fluid" style="max-height: 50px;"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="../Item/index.html">Market</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../Groceries/index.html">Groceries</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../Kitchen/index.html">Kitchen</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../Meat/index.html">Meat Butcher</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" onclick="showHelp()" id="helpLink">Help</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../LoginRegister/index.html">Login</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../Basket/index.html">
+                            <img src="./images/Basket.png" alt="Basket" style="width: 24px; height: 24px;">
+                        </a>
+                    </li>
+                </ul>
             </div>
-            <div class="filter-group">
-                <label for="product-type">Product Type</label>
-                <button class="toggle-btn" onclick="toggleFilter('product-type-filter')">+</button>
-                <div id="product-type-filter" class="filter-content">
-                    <select id="product-type">
-                        <option value="vegetables">Vegetables</option>
-                        <option value="fruits">Fruits</option>
+        </div>
+    </nav>
+    
+    <div class="container mt-5">
+        <div class="row mb-4">
+            <div class="col-md-6">
+                <select class="form-select w-auto" aria-label="Category">
+                    <option selected>Category</option>
+                    <option value="1">Dairy Products</option>
+                    <option value="2">Machines</option>
+                    <option value="3">Tools</option>
+                    <option value="4">Chocolate</option>
+                    <option value="5">Chips</option>
+                </select>
+            </div>
+            <div class="col-md-6">
+                <div class="d-flex justify-content-end">
+                    <select class="form-select w-auto" aria-label="Sort by">
+                        <option selected>Sort by</option>
+                        <option value="1">Price: Low to High</option>
+                        <option value="2">Price: High to Low</option>
+                        <option value="3">Rating: Low to High</option>
+                        <option value="4">Rating: High to Low</option>
                     </select>
                 </div>
             </div>
-            <div class="filter-group">
-                <label for="brand">Brand</label>
-                <button class="toggle-btn" onclick="toggleFilter('brand-filter')">+</button>
-                <div id="brand-filter" class="filter-content">
-                    <input type="text" id="brand" placeholder="Search brands">
-                    <div class="checkbox-list">
-                        <label><input type="checkbox" value="organic"> Organic</label>
-                        <label><input type="checkbox" value="local"> Local</label>
-                    </div>
-                </div>
-            </div>
-            <div class="filter-group">
-                <label for="color">Color</label>
-                <button class="toggle-btn" onclick="toggleFilter('color-filter')">+</button>
-                <div id="color-filter" class="filter-content">
-                    <div class="color-swatch">
-                        <div style="background: red;"></div>
-                        <div style="background: green;"></div>
-                        <div style="background: yellow;"></div>
-                        <div style="background: orange;"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="filter-group">
-                <label for="status">Product Status</label>
-                <button class="toggle-btn" onclick="toggleFilter('status-filter')">+</button>
-                <div id="status-filter" class="filter-content">
-                    <div class="checkbox-list">
-                        <label><input type="checkbox" value="fresh"> Fresh</label>
-                        <label><input type="checkbox" value="frozen"> Frozen</label>
-                    </div>
-                </div>
-            </div>
-            <div class="filter-group">
-                <label for="discounts">Discounts</label>
-                <button class="toggle-btn" onclick="toggleFilter('discounts-filter')">+</button>
-                <div id="discounts-filter" class="filter-content">
-                    <div class="checkbox-list">
-                        <label><input type="checkbox" value="10%"> 10%</label>
-                        <label><input type="checkbox" value="20%"> 20%</label>
-                        <label><input type="checkbox" value="bank-offers"> Bank Offers</label>
-                    </div>
-                </div>
-            </div>
-            <div class="filter-group">
-                <label for="additional-filters">Additional Filters</label>
-                <button class="toggle-btn" onclick="toggleFilter('additional-filters-filter')">+</button>
-                <div id="additional-filters-filter" class="filter-content">
-                    <div class="checkbox-list">
-                        <label><input type="checkbox" value="eco-friendly"> Eco-Friendly</label>
-                        <label><input type="checkbox" value="bestseller"> Bestseller</label>
-                        <label><input type="checkbox" value="limited-stock"> Limited Stock</label>
-                    </div>
-                </div>
-            </div>
         </div>
-        <div class="products">
-            <div class="product-card">
-                <div class="badges">New Arrival</div>
-                <img src="./images/apple.jpg" alt="Apple">
-                <h3>Apple</h3>
-                <div class="specs">Type: Fruit, Weight: 1kg</div>
-                <div class="price">$3</div>
-                <div class="actions">
-                    <button>Add to Wishlist</button>
-                    <button>Add to Cart</button>
+        <div class="row">
+            <!-- Item Card 1 -->
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <img src="images/item1.jpg" class="card-img-top" alt="Item 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Apples</h5>
+                        <p class="card-text">$10.00 per KG</p>
+                        <p class="card-text">Rating: ★★★★☆</p>
+                        <div class="d-flex">
+                            <input type="number" class="form-control me-2" placeholder="Grams" min="0">
+                            <a href="#" class="btn btn-primary">Add to Cart</a>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="product-card">
-                <div class="badges">Featured</div>
-                <img src="./images/carrot.jpg" alt="Carrot">
-                <h3>Carrot</h3>
-                <div class="specs">Type: Vegetable, Weight: 1kg</div>
-                <div class="price">$2</div>
-                <div class="actions">
-                    <button>Add to Wishlist</button>
-                    <button>Add to Cart</button>
+            <!-- Item Card 2 -->
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <img src="images/item2.jpg" class="card-img-top" alt="Item 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Bananas</h5>
+                        <p class="card-text">$15.00 per KG</p>
+                        <p class="card-text">Rating: ★★★★☆</p>
+                        <div class="d-flex">
+                            <input type="number" class="form-control me-2" placeholder="Grams" min="0">
+                            <a href="#" class="btn btn-primary">Add to Cart</a>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="product-card">
-                <div class="badges">Bestseller</div>
-                <img src="./images/banana.jpg" alt="Banana">
-                <h3>Banana</h3>
-                <div class="specs">Type: Fruit, Weight: 1kg</div>
-                <div class="price">$1.5</div>
-                <div class="actions">
-                    <button>Add to Wishlist</button>
-                    <button>Add to Cart</button>
+            <!-- Item Card 3 -->
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <img src="images/item3.jpg" class="card-img-top" alt="Item 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Carrots</h5>
+                        <p class="card-text">$20.00 per KG</p>
+                        <p class="card-text">Rating: ★★★★☆</p>
+                        <div class="d-flex">
+                            <input type="number" class="form-control me-2" placeholder="Grams" min="0">
+                            <a href="#" class="btn btn-primary">Add to Cart</a>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="product-card">
-                <div class="badges">Limited Stock</div>
-                <img src="./images/broccoli.jpg" alt="Broccoli">
-                <h3>Broccoli</h3>
-                <div class="specs">Type: Vegetable, Weight: 1kg</div>
-                <div class="price">$4</div>
-                <div class="actions">
-                    <button>Add to Wishlist</button>
-                    <button>Add to Cart</button>
+            <!-- Item Card 4 -->
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <img src="images/item4.png" class="card-img-top" alt="Item 4">
+                    <div class="card-body">
+                        <h5 class="card-title">Tomatoes</h5>
+                        <p class="card-text">$25.00 per KG</p>
+                        <p class="card-text">Rating: ★★★★☆</p>
+                        <div class="d-flex">
+                            <input type="number" class="form-control me-2" placeholder="Grams" min="0">
+                            <a href="#" class="btn btn-primary">Add to Cart</a>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <!-- Add more product cards as needed -->
+            <!-- Item Card 5 -->
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <img src="images/item5.jpg" class="card-img-top" alt="Item 5">
+                    <div class="card-body">
+                        <h5 class="card-title">Potatoes</h5>
+                        <p class="card-text">$30.00 per KG</p>
+                        <p class="card-text">Rating: ★★★★☆</p>
+                        <div class="d-flex">
+                            <input type="number" class="form-control me-2" placeholder="Grams" min="0">
+                            <a href="#" class="btn btn-primary">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Item Card 6 -->
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <img src="images/item6.webp" class="card-img-top" alt="Item 6">
+                    <div class="card-body">
+                        <h5 class="card-title">Oranges</h5>
+                        <p class="card-text">$35.00 per KG</p>
+                        <p class="card-text">Rating: ★★★★☆</p>
+                        <div class="d-flex">
+                            <input type="number" class="form-control me-2" placeholder="Grams" min="0">
+                            <a href="#" class="btn btn-primary">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Item Card 7 -->
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <img src="images/item7.jpg" class="card-img-top" alt="Item 7">
+                    <div class="card-body">
+                        <h5 class="card-title">Broccoli</h5>
+                        <p class="card-text">$40.00 per KG</p>
+                        <p class="card-text">Rating: ★★★★☆</p>
+                        <div class="d-flex">
+                            <input type="number" class="form-control me-2" placeholder="Grams" min="0">
+                            <a href="#" class="btn btn-primary">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Item Card 8 -->
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <img src="images/item8.jpg" class="card-img-top" alt="Item 8">
+                    <div class="card-body">
+                        <h5 class="card-title">Lettuce</h5>
+                        <p class="card-text">$45.00 per KG</p>
+                        <p class="card-text">Rating: ★★★★☆</p>
+                        <div class="d-flex">
+                            <input type="number" class="form-control me-2" placeholder="Grams" min="0">
+                            <a href="#" class="btn btn-primary">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Item Card 9 -->
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <img src="images/item9.jpg" class="card-img-top" alt="Item 9">
+                    <div class="card-body">
+                        <h5 class="card-title">Cucumbers</h5>
+                        <p class="card-text">$50.00 per KG</p>
+                        <p class="card-text">Rating: ★★★★☆</p>
+                        <div class="d-flex">
+                            <input type="number" class="form-control me-2" placeholder="Grams" min="0">
+                            <a href="#" class="btn btn-primary">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Item Card 10 -->
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <img src="images/item10.webp" class="card-img-top" alt="Item 10">
+                    <div class="card-body">
+                        <h5 class="card-title">Peppers</h5>
+                        <p class="card-text">$55.00 per KG</p>
+                        <p class="card-text">Rating: ★★★★☆</p>
+                        <div class="d-flex">
+                            <input type="number" class="form-control me-2" placeholder="Grams" min="0">
+                            <a href="#" class="btn btn-primary">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Item Card 11 -->
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <img src="images/item11.jpg" class="card-img-top" alt="Item 11">
+                    <div class="card-body">
+                        <h5 class="card-title">Spinach</h5>
+                        <p class="card-text">$60.00 per KG</p>
+                        <p class="card-text">Rating: ★★★★☆</p>
+                        <div class="d-flex">
+                            <input type="number" class="form-control me-2" placeholder="Grams" min="0">
+                            <a href="#" class="btn btn-primary">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Item Card 12 -->
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <img src="images/item12.jpg" class="card-img-top" alt="Item 12">
+                    <div class="card-body">
+                        <h5 class="card-title">Grapes</h5>
+                        <p class="card-text">$65.00 per KG</p>
+                        <p class="card-text">Rating: ★★★★☆</p>
+                        <div class="d-flex">
+                            <input type="number" class="form-control me-2" placeholder="Grams" min="0">
+                            <a href="#" class="btn btn-primary">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+    
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
