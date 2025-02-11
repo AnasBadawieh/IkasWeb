@@ -34,16 +34,33 @@ body {
     padding: 0.5rem; /* Adjusted padding */
     margin-bottom: 1rem;
     cursor: pointer;
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: auto; /* Fit to content */
     text-align: center;
     margin-left: auto;
     margin-right: auto;
+    transition: all 0.3s ease;
+}
+
+.sidebar .menu-text {
+    display: inline-block;
+    margin-right: 0.5rem;
 }
 
 .sidebar .menu-icon {
     width: 24px;
     height: 24px;
+    display: none;
+}
+
+.sidebar.minimized .menu-text {
+    display: none;
+}
+
+.sidebar.minimized .menu-icon {
+    display: inline-block;
 }
 
 .sidebar.minimized .toggle-btn {
