@@ -1,342 +1,189 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Market</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 </head>
 <body>
-    <div class="header">
-        <a href="../Homepage/index.html" class="logo">
-            <img src="./images/logo1.jpg" alt="Logo">
-        </a>
-        <h1>Market</h1>
-        <div class="controls">
-            <select>
-                <option value="price-asc">Price: Low to High</option>
-                <option value="price-desc">Price: High to Low</option>
-                <option value="rating-desc">Rating: High to Low</option>
-                <option value="popularity">Popularity</option>
-                <option value="newest">Newest First</option>
-            </select>
-            <button>Toggle View</button>
-        </div>
-    </div>
-    <div class="container">
-        <div class="sidebar">
-            <h2>Filters</h2>
-            <div class="filter-group">
-                <label for="category">Category</label>
-                <button class="toggle-btn" onclick="toggleFilter('category-filter')">+</button>
-                <div id="category-filter" class="filter-content">
-                    <select id="category">
-                        <option value="electronics">Electronics</option>
-                        <option value="home-appliances">Home Appliances</option>
-                        <option value="clothing">Clothing</option>
-                        <option value="sports">Sports</option>
-                    </select>
-                </div>
-            </div>
-            <div class="filter-group">
-                <label for="price">Price</label>
-                <button class="toggle-btn" onclick="toggleFilter('price-filter')">+</button>
-                <div id="price-filter" class="filter-content">
-                    <input type="range" id="price" min="399" max="25999">
-                    <div>Min: $399, Max: $25999</div>
-                </div>
-            </div>
-            <div class="filter-group">
-                <label for="product-type">Product Type</label>
-                <button class="toggle-btn" onclick="toggleFilter('product-type-filter')">+</button>
-                <div id="product-type-filter" class="filter-content">
-                    <select id="product-type">
-                        <option value="gaming-laptop">Gaming Laptop</option>
-                        <option value="ultrabook">Ultrabook</option>
-                        <option value="convertible">Convertible</option>
-                    </select>
-                </div>
-            </div>
-            <div class="filter-group">
-                <label for="brand">Brand</label>
-                <button class="toggle-btn" onclick="toggleFilter('brand-filter')">+</button>
-                <div id="brand-filter" class="filter-content">
-                    <input type="text" id="brand" placeholder="Search brands">
-                    <div class="checkbox-list">
-                        <label><input type="checkbox" value="apple"> Apple</label>
-                        <label><input type="checkbox" value="samsung"> Samsung</label>
-                        <label><input type="checkbox" value="msi"> MSI</label>
-                        <label><input type="checkbox" value="dell"> Dell</label>
-                    </div>
-                </div>
-            </div>
-            <div class="filter-group">
-                <label for="color">Color</label>
-                <button class="toggle-btn" onclick="toggleFilter('color-filter')">+</button>
-                <div id="color-filter" class="filter-content">
-                    <div class="color-swatch">
-                        <div style="background: red;"></div>
-                        <div style="background: blue;"></div>
-                        <div style="background: green;"></div>
-                        <div style="background: black;"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="filter-group">
-                <label for="status">Product Status</label>
-                <button class="toggle-btn" onclick="toggleFilter('status-filter')">+</button>
-                <div id="status-filter" class="filter-content">
-                    <div class="checkbox-list">
-                        <label><input type="checkbox" value="new"> New</label>
-                        <label><input type="checkbox" value="refurbished"> Refurbished</label>
-                        <label><input type="checkbox" value="open-box"> Open Box</label>
-                        <label><input type="checkbox" value="pre-owned"> Pre-owned</label>
-                    </div>
-                </div>
-            </div>
-            <div class="filter-group">
-                <label for="model-series">Model Series</label>
-                <button class="toggle-btn" onclick="toggleFilter('model-series-filter')">+</button>
-                <div id="model-series-filter" class="filter-content">
-                    <select id="model-series">
-                        <option value="macbook-pro">MacBook Pro</option>
-                        <option value="dell-xps">Dell XPS</option>
-                        <option value="hp-spectre">HP Spectre</option>
-                    </select>
-                </div>
-            </div>
-            <div class="filter-group">
-                <label for="specifications">Specifications</label>
-                <button class="toggle-btn" onclick="toggleFilter('specifications-filter')">+</button>
-                <div id="specifications-filter" class="filter-content">
-                    <select id="specifications">
-                        <option value="11th-gen">11th Gen</option>
-                        <option value="12th-gen">12th Gen</option>
-                        <option value="intel-core-i7">Intel Core i7</option>
-                        <option value="amd-ryzen-5">AMD Ryzen 5</option>
-                        <option value="8gb-ram">8GB RAM</option>
-                        <option value="16gb-ram">16GB RAM</option>
-                        <option value="256gb-ssd">256GB SSD</option>
-                        <option value="1tb-hdd">1TB HDD</option>
-                    </select>
-                </div>
-            </div>
-            <div class="filter-group">
-                <label for="rating">Customer Rating</label>
-                <button class="toggle-btn" onclick="toggleFilter('rating-filter')">+</button>
-                <div id="rating-filter" class="filter-content">
-                    <select id="rating">
-                        <option value="4-stars">4+ stars</option>
-                    </select>
-                </div>
-            </div>
-            <div class="filter-group">
-                <label for="discounts">Discounts</label>
-                <button class="toggle-btn" onclick="toggleFilter('discounts-filter')">+</button>
-                <div id="discounts-filter" class="filter-content">
-                    <div class="checkbox-list">
-                        <label><input type="checkbox" value="10%"> 10%</label>
-                        <label><input type="checkbox" value="20%"> 20%</label>
-                        <label><input type="checkbox" value="bank-offers"> Bank Offers</label>
-                    </div>
-                </div>
-            </div>
-            <div class="filter-group">
-                <label for="additional-filters">Additional Filters</label>
-                <button class="toggle-btn" onclick="toggleFilter('additional-filters-filter')">+</button>
-                <div id="additional-filters-filter" class="filter-content">
-                    <div class="checkbox-list">
-                        <label><input type="checkbox" value="eco-friendly"> Eco-Friendly</label>
-                        <label><input type="checkbox" value="bestseller"> Bestseller</label>
-                        <label><input type="checkbox" value="limited-stock"> Limited Stock</label>
-                    </div>
-                </div>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #009048;">
+        <div class="container">
+            <a class="navbar-brand" href="../Homepage/index.html"><img src="./images/logo1.png" alt="Logo" class="img-fluid" style="max-height: 50px;"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="../Item/index.html">Market</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../Groceries/index.html">Groceries</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../Kitchen/index.html">Kitchen</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../Meat/index.html">Meat Butcher</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" onclick="showHelp()" id="helpLink">Help</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../LoginRegister/index.html">Login</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../Basket/index.html">
+                            <img src="./images/Basket.png" alt="Basket" style="width: 24px; height: 24px;">
+                        </a>
+                    </li>
+                </ul>
             </div>
         </div>
-        <div class="products">
-            <div class="product-card">
-                <div class="badges">New Arrival</div>
-                <img src="./images/product1.jpg" alt="Product Image">
-                <h3>Apple MacBook Pro 16</h3>
-                <div class="specs">Processor: M3 Max, RAM: 32GB, Storage: 1TB SSD</div>
-                <div class="price">$2999</div>
-                <div class="original-price">$3499</div>
-                <div class="savings">Save: $500</div>
-                <div class="actions">
-                    <button>Add to Wishlist</button>
-                    <button>Add to Cart</button>
-                    <button>Compare</button>
+    </nav>
+    
+    <div class="container mt-5">
+        <div class="row">
+            <!-- Item Card 1 -->
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <img src="images/item1.jpg" class="card-img-top" alt="Item 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Penut Butter Kitkat</h5>
+                        <p class="card-text">$10.00</p>
+                        <p class="card-text">Rating: ★★★★☆</p>
+                        <a href="#" class="btn btn-primary">Add to Cart</a>
+                    </div>
                 </div>
-                <div class="rating">★★★★☆</div>
             </div>
-            <div class="product-card">
-                <div class="badges">Featured</div>
-                <img src="./images/product2.webp" alt="Product Image">
-                <h3>Dell XPS 13</h3>
-                <div class="specs">Processor: Intel Core i7, RAM: 16GB, Storage: 512GB SSD</div>
-                <div class="price">$1499</div>
-                <div class="original-price">$1699</div>
-                <div class="savings">Save: $200</div>
-                <div class="actions">
-                    <button>Add to Wishlist</button>
-                    <button>Add to Cart</button>
-                    <button>Compare</button>
+            <!-- Item Card 2 -->
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <img src="images/item2.jpg" class="card-img-top" alt="Item 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Snickers</h5>
+                        <p class="card-text">$15.00</p>
+                        <p class="card-text">Rating: ★★★★☆</p>
+                        <a href="#" class="btn btn-primary">Add to Cart</a>
+                    </div>
                 </div>
-                <div class="rating">★★★★☆</div>
             </div>
-            <div class="product-card">
-                <div class="badges">Bestseller</div>
-                <img src="./images/product3.jpg" alt="Product Image">
-                <h3>HP Spectre x360</h3>
-                <div class="specs">Processor: Intel Core i7, RAM: 16GB, Storage: 1TB SSD</div>
-                <div class="price">$1799</div>
-                <div class="original-price">$1999</div>
-                <div class="savings">Save: $200</div>
-                <div class="actions">
-                    <button>Add to Wishlist</button>
-                    <button>Add to Cart</button>
-                    <button>Compare</button>
+            <!-- Item Card 3 -->
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <img src="images/item3.jpg" class="card-img-top" alt="Item 3">
+                    <div class="card-body">
+                        <h5 class="card-title">ICook AirFryer</h5>
+                        <p class="card-text">$20.00</p>
+                        <p class="card-text">Rating: ★★★★☆</p>
+                        <a href="#" class="btn btn-primary">Add to Cart</a>
+                    </div>
                 </div>
-                <div class="rating">★★★★★</div>
             </div>
-            <div class="product-card">
-                <div class="badges">Limited Stock</div>
-                <img src="./images/product4.jpg" alt="Product Image">
-                <h3>Galaxy Tab S7</h3>
-                <div class="specs">Processor: Snapdragon 865+, RAM: 6GB, Storage: 128GB</div>
-                <div class="price">$649</div>
-                <div class="original-price">$699</div>
-                <div class="savings">Save: $50</div>
-                <div class="actions">
-                    <button>Add to Wishlist</button>
-                    <button>Add to Cart</button>
-                    <button>Compare</button>
+            <!-- Item Card 4 -->
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <img src="images/item4.png" class="card-img-top" alt="Item 4">
+                    <div class="card-body">
+                        <h5 class="card-title">ScrewDriver + Shape</h5>
+                        <p class="card-text">$25.00</p>
+                        <p class="card-text">Rating: ★★★★☆</p>
+                        <a href="#" class="btn btn-primary">Add to Cart</a>
+                    </div>
                 </div>
-                <div class="rating">★★★★☆</div>
             </div>
-            <!-- Add more product cards as needed -->
-            <div class="product-card">
-                <div class="badges">New Arrival</div>
-                <img src="./images/product1.jpg" alt="Product Image">
-                <h3>Apple MacBook Pro 16</h3>
-                <div class="specs">Processor: M3 Max, RAM: 32GB, Storage: 1TB SSD</div>
-                <div class="price">$2999</div>
-                <div class="original-price">$3499</div>
-                <div class="savings">Save: $500</div>
-                <div class="actions">
-                    <button>Add to Wishlist</button>
-                    <button>Add to Cart</button>
-                    <button>Compare</button>
+            <!-- Item Card 5 -->
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <img src="images/item5.jpg" class="card-img-top" alt="Item 5">
+                    <div class="card-body">
+                        <h5 class="card-title">ToolBox - Tools Included</h5>
+                        <p class="card-text">$30.00</p>
+                        <p class="card-text">Rating: ★★★★☆</p>
+                        <a href="#" class="btn btn-primary">Add to Cart</a>
+                    </div>
                 </div>
-                <div class="rating">★★★★☆</div>
             </div>
-            <div class="product-card">
-                <div class="badges">Featured</div>
-                <img src="./images/product2.webp" alt="Product Image">
-                <h3>Dell XPS 13</h3>
-                <div class="specs">Processor: Intel Core i7, RAM: 16GB, Storage: 512GB SSD</div>
-                <div class="price">$1499</div>
-                <div class="original-price">$1699</div>
-                <div class="savings">Save: $200</div>
-                <div class="actions">
-                    <button>Add to Wishlist</button>
-                    <button>Add to Cart</button>
-                    <button>Compare</button>
+            <!-- Item Card 6 -->
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <img src="images/item6.webp" class="card-img-top" alt="Item 6">
+                    <div class="card-body">
+                        <h5 class="card-title">Lays Flamin Hot</h5>
+                        <p class="card-text">$35.00</p>
+                        <p class="card-text">Rating: ★★★★☆</p>
+                        <a href="#" class="btn btn-primary">Add to Cart</a>
+                    </div>
                 </div>
-                <div class="rating">★★★★☆</div>
             </div>
-            <div class="product-card">
-                <div class="badges">Bestseller</div>
-                <img src="./images/product3.jpg" alt="Product Image">
-                <h3>HP Spectre x360</h3>
-                <div class="specs">Processor: Intel Core i7, RAM: 16GB, Storage: 1TB SSD</div>
-                <div class="price">$1799</div>
-                <div class="original-price">$1999</div>
-                <div class="savings">Save: $200</div>
-                <div class="actions">
-                    <button>Add to Wishlist</button>
-                    <button>Add to Cart</button>
-                    <button>Compare</button>
+            <!-- Item Card 7 -->
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <img src="images/item7.jpg" class="card-img-top" alt="Item 7">
+                    <div class="card-body">
+                        <h5 class="card-title">Arla Natural Cream Cheese</h5>
+                        <p class="card-text">$40.00</p>
+                        <p class="card-text">Rating: ★★★★☆</p>
+                        <a href="#" class="btn btn-primary">Add to Cart</a>
+                    </div>
                 </div>
-                <div class="rating">★★★★★</div>
             </div>
-            <div class="product-card">
-                <div class="badges">Limited Stock</div>
-                <img src="./images/product4.jpg" alt="Product Image">
-                <h3>Galaxy Tab S7</h3>
-                <div class="specs">Processor: Snapdragon 865+, RAM: 6GB, Storage: 128GB</div>
-                <div class="price">$649</div>
-                <div class="original-price">$699</div>
-                <div class="savings">Save: $50</div>
-                <div class="actions">
-                    <button>Add to Wishlist</button>
-                    <button>Add to Cart</button>
-                    <button>Compare</button>
+            <!-- Item Card 8 -->
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <img src="images/item8.jpg" class="card-img-top" alt="Item 8">
+                    <div class="card-body">
+                        <h5 class="card-title">Mature Cheddar Cheese</h5>
+                        <p class="card-text">$45.00</p>
+                        <p class="card-text">Rating: ★★★★☆</p>
+                        <a href="#" class="btn btn-primary">Add to Cart</a>
+                    </div>
                 </div>
-                <div class="rating">★★★★☆</div>
             </div>
-            <div class="product-card">
-                <div class="badges">New Arrival</div>
-                <img src="./images/product1.jpg" alt="Product Image">
-                <h3>Apple MacBook Pro 16</h3>
-                <div class="specs">Processor: M3 Max, RAM: 32GB, Storage: 1TB SSD</div>
-                <div class="price">$2999</div>
-                <div class="original-price">$3499</div>
-                <div class="savings">Save: $500</div>
-                <div class="actions">
-                    <button>Add to Wishlist</button>
-                    <button>Add to Cart</button>
-                    <button>Compare</button>
+            <!-- Item Card 9 -->
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <img src="images/item9.jpg" class="card-img-top" alt="Item 9">
+                    <div class="card-body">
+                        <h5 class="card-title">Tango Orange Drink</h5>
+                        <p class="card-text">$50.00</p>
+                        <p class="card-text">Rating: ★★★★☆</p>
+                        <a href="#" class="btn btn-primary">Add to Cart</a>
+                    </div>
                 </div>
-                <div class="rating">★★★★☆</div>
             </div>
-            <div class="product-card">
-                <div class="badges">Featured</div>
-                <img src="./images/product2.webp" alt="Product Image">
-                <h3>Dell XPS 13</h3>
-                <div class="specs">Processor: Intel Core i7, RAM: 16GB, Storage: 512GB SSD</div>
-                <div class="price">$1499</div>
-                <div class="original-price">$1699</div>
-                <div class="savings">Save: $200</div>
-                <div class="actions">
-                    <button>Add to Wishlist</button>
-                    <button>Add to Cart</button>
-                    <button>Compare</button>
+            <!-- Item Card 10 -->
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <img src="images/item10.webp" class="card-img-top" alt="Item 10">
+                    <div class="card-body">
+                        <h5 class="card-title">Monster Energy Drink</h5>
+                        <p class="card-text">$55.00</p>
+                        <p class="card-text">Rating: ★★★★☆</p>
+                        <a href="#" class="btn btn-primary">Add to Cart</a>
+                    </div>
                 </div>
-                <div class="rating">★★★★☆</div>
             </div>
-            <div class="product-card">
-                <div class="badges">Bestseller</div>
-                <img src="./images/product3.jpg" alt="Product Image">
-                <h3>HP Spectre x360</h3>
-                <div class="specs">Processor: Intel Core i7, RAM: 16GB, Storage: 1TB SSD</div>
-                <div class="price">$1799</div>
-                <div class="original-price">$1999</div>
-                <div class="savings">Save: $200</div>
-                <div class="actions">
-                    <button>Add to Wishlist</button>
-                    <button>Add to Cart</button>
-                    <button>Compare</button>
+            <!-- Item Card 11 -->
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <img src="images/item11.jpg" class="card-img-top" alt="Item 11">
+                    <div class="card-body">
+                        <h5 class="card-title">Peros Washing Machine Detergant</h5>
+                        <p class="card-text">$60.00</p>
+                        <p class="card-text">Rating: ★★★★☆</p>
+                        <a href="#" class="btn btn-primary">Add to Cart</a>
+                    </div>
                 </div>
-                <div class="rating">★★★★★</div>
             </div>
-            <div class="product-card">
-                <div class="badges">Limited Stock</div>
-                <img src="./images/product4.jpg" alt="Product Image">
-                <h3>Galaxy Tab S7</h3>
-                <div class="specs">Processor: Snapdragon 865+, RAM: 6GB, Storage: 128GB</div>
-                <div class="price">$649</div>
-                <div class="original-price">$699</div>
-                <div class="savings">Save: $50</div>
-                <div class="actions">
-                    <button>Add to Wishlist</button>
-                    <button>Add to Cart</button>
-                    <button>Compare</button>
+            <!-- Item Card 12 -->
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <img src="images/item12.jpg" class="card-img-top" alt="Item 12">
+                    <div class="card-body">
+                        <h5 class="card-title">Persil Washing Machine Detergant</h5>
+                        <p class="card-text">$65.00</p>
+                        <p class="card-text">Rating: ★★★★☆</p>
+                        <a href="#" class="btn btn-primary">Add to Cart</a>
+                    </div>
                 </div>
-                <div class="rating">★★★★☆</div>
             </div>
         </div>
     </div>
+    
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
