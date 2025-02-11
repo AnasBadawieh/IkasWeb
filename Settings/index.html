@@ -14,8 +14,7 @@
         <img src="./images/menu.png" alt="Menu" class="menu-icon">
       </button>
       <ul>
-        <li data-section="profile" class="active">Profile</li>
-        <li data-section="security">Security</li>
+        <li data-section="security" class="active">Security</li>
         <li data-section="payment">Payment</li>
         <li data-section="notification">Notifications</li>
         <li data-section="appearance">Appearance</li>
@@ -25,26 +24,7 @@
       </ul>
     </aside>
     <main class="content">
-      <section id="profile" class="settings-section active">
-        <h2>Profile Settings</h2>
-        <form id="profileForm">
-          <div class="form-group">
-            <label for="fullname">Full Name</label>
-            <input type="text" id="fullname" name="fullname" placeholder="John Doe">
-          </div>
-          <div class="form-group">
-            <label for="email">Email Address</label>
-            <input type="email" id="email" name="email" placeholder="john@example.com">
-          </div>
-          <div class="form-group">
-            <label for="phone">Phone Number</label>
-            <input type="tel" id="phone" name="phone" placeholder="+1 234 567 8900">
-          </div>
-          <button type="button" class="btn" onclick="saveSettings('Profile')">Save Profile</button>
-        </form>
-      </section>
-
-      <section id="security" class="settings-section">
+      <section id="security" class="settings-section active">
         <h2>Security Settings</h2>
         <form id="securityForm">
           <div class="form-group">
