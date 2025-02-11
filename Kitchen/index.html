@@ -2,18 +2,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kitchen</title>
-    <!-- Bootstrap CSS -->
+    <title>Meat Butcher</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 </head>
-
 <body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #009048;">
         <div class="container">
-            <a class="navbar-brand" href="#"><img src="./images/logo1.png" alt="Logo" class="img-fluid" style="max-height: 50px;"></a>
+            <a class="navbar-brand" href="../Homepage/index.html"><img src="./images/logo1.png" alt="Logo" class="img-fluid" style="max-height: 50px;"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -34,7 +32,214 @@
             </div>
         </div>
     </nav>
-
     
+    <div class="container mt-5">
+        <div class="row mb-4">
+            <div class="col-md-6">
+                <select class="form-select w-auto" aria-label="Category">
+                    <option selected>Category</option>
+                    <option value="1">Soup</option>
+                    <option value="2">Chicken</option>
+                    <option value="3">Beef</option>
+                    <option value="4">Lamb</option>
+                    <option value="5">Carbs</option>
+                    <option value="6">Seafood</option>
+                    <option value="7">Vegetarian</option>
+                    <option value="8">Dessert</option>
+                    <option value="9">Pastry</option>
+                </select>
+            </div>
+            <div class="col-md-6">
+                <div class="d-flex justify-content-end">
+                    <select class="form-select w-auto" aria-label="Sort by">
+                        <option selected>Sort by</option>
+                        <option value="1">Price: Low to High</option>
+                        <option value="2">Price: High to Low</option>
+                        <option value="3">Rating: Low to High</option>
+                        <option value="4">Rating: High to Low</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <!-- Item Card 1 -->
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <img src="images/item1.jpg" class="card-img-top" alt="Item 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Lentli Soup</h5>
+                        <p class="card-text">$3.00 per KG</p>
+                        <p class="card-text">Rating: ★★★★☆</p>
+                        <div class="d-flex">
+                            <input type="number" class="form-control me-2" placeholder="Grams" min="0">
+                            <a href="#" class="btn btn-primary">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Item Card 2 -->
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <img src="images/item2.png" class="card-img-top" alt="Item 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Grilled Chicken</h5>
+                        <p class="card-text">$15.00 per KG</p>
+                        <p class="card-text">Rating: ★★★★☆</p>
+                        <div class="d-flex">
+                            <input type="number" class="form-control me-2" placeholder="Grams" min="0">
+                            <a href="#" class="btn btn-primary">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Item Card 3 -->
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <img src="images/item3.webp" class="card-img-top" alt="Item 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Lasagna</h5>
+                        <p class="card-text">$20.00 per KG</p>
+                        <p class="card-text">Rating: ★★★★☆</p>
+                        <div class="d-flex">
+                            <input type="number" class="form-control me-2" placeholder="Grams" min="0">
+                            <a href="#" class="btn btn-primary">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Item Card 4 -->
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <img src="images/item4.png" class="card-img-top" alt="Item 4">
+                    <div class="card-body">
+                        <h5 class="card-title">Basmati Rice</h5>
+                        <p class="card-text">$25.00 per KG</p>
+                        <p class="card-text">Rating: ★★★★☆</p>
+                        <div class="d-flex">
+                            <input type="number" class="form-control me-2" placeholder="Grams" min="0">
+                            <a href="#" class="btn btn-primary">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Item Card 5 -->
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <img src="images/item5.jpg" class="card-img-top" alt="Item 5">
+                    <div class="card-body">
+                        <h5 class="card-title">Whole Chocolate Cake</h5>
+                        <p class="card-text">$80.00 per Piece</p>
+                        <p class="card-text">Rating: ★★★★☆</p>
+                        <div class="d-flex">
+                            <a href="#" class="btn btn-primary">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Item Card 6 -->
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <img src="images/item6.webp" class="card-img-top" alt="Item 6">
+                    <div class="card-body">
+                        <h5 class="card-title">Slice Chocolate Cake</h5>
+                        <p class="card-text">$35.00 per Piece</p>
+                        <p class="card-text">Rating: ★★★★☆</p>
+                        <div class="d-flex">
+                            <a href="#" class="btn btn-primary">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Item Card 7 -->
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <img src="images/item7.webp" class="card-img-top" alt="Item 7">
+                    <div class="card-body">
+                        <h5 class="card-title">Tiramisu</h5>
+                        <p class="card-text">$40.00 per Piece</p>
+                        <p class="card-text">Rating: ★★★★☆</p>
+                        <div class="d-flex">
+                            <a href="#" class="btn btn-primary">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Item Card 8 -->
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <img src="images/item8.webp" class="card-img-top" alt="Item 8">
+                    <div class="card-body">
+                        <h5 class="card-title">Brownie</h5>
+                        <p class="card-text">$45.00 per Piece</p>
+                        <p class="card-text">Rating: ★★★★☆</p>
+                        <div class="d-flex">
+                            <a href="#" class="btn btn-primary">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Item Card 9 -->
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <img src="images/item9.webp" class="card-img-top" alt="Item 9">
+                    <div class="card-body">
+                        <h5 class="card-title">Simit</h5>
+                        <p class="card-text">$5.00 per Piece</p>
+                        <p class="card-text">Rating: ★★★★☆</p>
+                        <div class="d-flex">
+                            <a href="#" class="btn btn-primary">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Item Card 10 -->
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <img src="images/item10.jpg" class="card-img-top" alt="Item 10">
+                    <div class="card-body">
+                        <h5 class="card-title">Poğaças</h5>
+                        <p class="card-text">$6.00 per Piece</p>
+                        <p class="card-text">Rating: ★★★★☆</p>
+                        <div class="d-flex">
+                            <a href="#" class="btn btn-primary">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Item Card 11 -->
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <img src="images/item11.webp" class="card-img-top" alt="Item 11">
+                    <div class="card-body">
+                        <h5 class="card-title">Borek</h5>
+                        <p class="card-text">$9.00 per KG</p>
+                        <p class="card-text">Rating: ★★★★☆</p>
+                        <div class="d-flex">
+                            <a href="#" class="btn btn-primary">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Item Card 12 -->
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <img src="images/item12.webp" class="card-img-top" alt="Item 12">
+                    <div class="card-body">
+                        <h5 class="card-title">Baklava</h5>
+                        <p class="card-text">$65.00 per KG</p>
+                        <p class="card-text">Rating: ★★★★☆</p>
+                        <div class="d-flex">
+                            <input type="number" class="form-control me-2" placeholder="Grams" min="0">
+                            <a href="#" class="btn btn-primary">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
