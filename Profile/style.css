@@ -1,12 +1,12 @@
 body {
     font-family: Arial, sans-serif;
-    background: linear-gradient(to right, #e0c3fc, #8ec5fc);
+    background: linear-gradient(to right, #309c66, #009048);
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 100vh;
+    /*  align-items: center; */
+    min-height: 100vh;
 }
 .container {
     display: flex;
@@ -82,7 +82,7 @@ body {
     height: 100px;
 }
 .form-group button {
-    background: purple;
+    background: rgb(1, 107, 34);
     color: white;
     padding: 10px 20px;
     border: none;
@@ -90,6 +90,11 @@ body {
     cursor: pointer;
     transition: background 0.3s;
 }
+
+.form-group button:active, .form-group button:focus, .form-group button:hover {
+    background: rgb(0, 78, 0);
+}
+
 .form-group button:hover {
     background: darkpurple;
 }
