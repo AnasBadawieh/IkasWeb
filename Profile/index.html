@@ -9,7 +9,9 @@
 <body>
     <div class="container">
         <div class="left-section">
-            <img src="./images/default-avatar.png" alt="Profile Picture">
+            <img src="./images/default-avatar.png" alt="Profile Picture" id="profile-picture">
+            <div class="overlay" onclick="document.getElementById('upload-picture').click();">+</div>
+            <input type="file" id="upload-picture" accept="image/*">
             <h2>John Doe</h2>
             <p>john.doe@example.com</p>
         </div>
@@ -54,7 +56,22 @@
                 <input type="email" id="email" placeholder="Enter your email address">
             </div>
             <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" placeholder="Enter your phone number">
+            </div>
+            <div class="form-group">
+                <label for="dob">Date of Birth</label>
+                <input type="date" id="dob">
+            </div>
+            <div class="form-group">
+                <label for="social-media">Social Media Links</label>
+                <input type="url" id="social-media" placeholder="Enter your social media profile link">
+            </div>
+            <div class="form-group">
                 <button id="change-password">Change Password</button>
+            </div>
+            <div class="form-group">
+                <button id="save-changes">Save Changes</button>
             </div>
         </div>
     </div>
