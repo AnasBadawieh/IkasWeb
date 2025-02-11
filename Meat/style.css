@@ -1,0 +1,28 @@
+/* Navbar */
+.navbar {
+    border-bottom: 1px solid #009048;
+}
+
+.navbar-brand img {
+    max-height: 50px;
+}
+
+.nav-link {
+    color: #ffffff;
+    font-weight: bold;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+}
+
+.nav-link:hover {
+    color: #007bff;
+}
+
+.card-body {
+    height: 200px;
+    overflow: hidden;
+}
+.card-title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
